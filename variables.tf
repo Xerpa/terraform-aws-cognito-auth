@@ -84,6 +84,10 @@ variable "cognito_identity_pool_provider" {
   description = "Cognito identity pool provider"
 }
 
+variable "cognito_pre_token_generation_lambda_arn"{
+  default = null
+}
+
 # -----------------------------------------------------------------------------
 # Variables: SES
 # -----------------------------------------------------------------------------

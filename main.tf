@@ -56,6 +56,7 @@ module "identity" {
 
   cognito_identity_pool_name     = "${var.cognito_identity_pool_name}"
   cognito_identity_pool_provider = "${var.cognito_identity_pool_provider}"
+  cognito_pre_token_generation_lambda_arn = "${var.cognito_pre_token_generation_lambda_arn}"
 
   tags = var.tags
 }
