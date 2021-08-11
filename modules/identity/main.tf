@@ -121,6 +121,7 @@ resource "aws_cognito_user_pool" "_" {
 
   lambda_config {
     pre_sign_up = aws_lambda_function._.arn
+    pre_token_generation = var.cognito_pre_token_generation_lambda_arn
   }
 
   lifecycle {
