@@ -200,3 +200,12 @@ resource "aws_lambda_permission" "_" {
   function_name = aws_lambda_function._.arn
   source_arn    = aws_cognito_user_pool._.arn
 }
+
+# aws_lambda_permission._
+resource "aws_lambda_permission" "pre_token_generation" {
+  count         = var.cognito_pre_token_generation_lambda_arn ? 1 : 0
+  principal     = "cognito-idp.amazonaws.com"
+  action        = "lambda:InvokeFunction"
+  function_name = var.cognito_pre_token_generation_lambda_arn
+  source_arn    = aws_cognito_user_pool._.arn
+}
